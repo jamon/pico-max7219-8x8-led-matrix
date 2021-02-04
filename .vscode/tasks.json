@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "upload",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/picoprobe.cfg",
+                "-f",
+                "target/rp2040.cfg",
+                "-c",
+                "targets rp2040.core0; program \"${workspaceFolder}/build/test2.elf\" ; reset run ; continue"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "monitor - ttyACM0",
+            "type": "shell",
+            "command": "minicom",
+            "args": [
+                "-D",
+                "/dev/ttyACM0",
+                "-o",
+                "-b",
+                "115200"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        }
+    ]
+  }
