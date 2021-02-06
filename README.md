@@ -1,5 +1,5 @@
 # WORK IN PROGRESS
-This is a work in progress and is subject to completely change.
+This is a work in progress and is subject to completely change.  That said, it does work, and makes for a pretty simple example of how to use the PIO to drive an arbitrary protocol.
 
 
 # raspberry pi pico pio-accelerated max7219 8x8 LED matrix driver
