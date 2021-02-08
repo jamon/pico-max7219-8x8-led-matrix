@@ -10,11 +10,11 @@ loop:
     pull ifempty block            [0]   ; pull OSR from output FIFO
                                         ; it's important to omit side-set here so that CS stays low if we're between displays
                                         ;   but stays high if we're between entire messages
-    out pins, 1         side 0b00 [1]   ; output 1 bit half a cycle before we raise the clock
+    out pins, 1         side 0b00 [0]   ; output 1 bit half a cycle before we raise the clock
                                         ; clock low, CS low
     jmp !OSRE loop      side 0b10 [0]   ; raise clock to tell max7219 to latch the bit, repeat until OSR is empty
                                         ; clock high, CS low
-    jmp X-- loop        side 0b00 [0]   ; once we reach the end of OSR, pull and repeat until X is 0 (no more displays)
+    jmp X-- loop        side 0b10 [0]   ; once we reach the end of OSR, pull and repeat until X is 0 (no more displays)
 .wrap
 
 ;.wrap_target

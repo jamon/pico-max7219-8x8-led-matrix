@@ -19,7 +19,7 @@ pico_set_program_version(test2 "0.1")
 
 pico_generate_pio_header(test2 ${CMAKE_CURRENT_LIST_DIR}/max7219.pio)
 
-target_link_libraries(test2 PRIVATE pico_stdlib hardware_pio hardware_interp)
+target_link_libraries(test2 PRIVATE pico_stdlib hardware_pio hardware_interp hardware_dma)
 
 pico_add_extra_outputs(test2)
 

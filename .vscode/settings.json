@@ -1,3 +1,8 @@
 {
+    "files.associations": {
+        "max7219.pio.h": "c",
+        "pio.h": "c",
+        "dma.h": "c"
+    }
 
 }
